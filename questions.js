@@ -171,3 +171,86 @@ console.log(numbs.reduce((sum,num) => sum+num,0))
 */
 
 
+
+/*
+  11. to check two numbers and return 
+  true if one of the number is 100 or if the sum of the two numbers 
+  is 100 */
+
+// function isHundred(num1, num2) {
+//   let sum = num1 + num2;
+//   if(num1 === 100 || num2 === 100 || sum === 100){
+//     return true;
+//   }else 
+//   return false;
+// }
+// console.log(isHundred(45,33))
+
+            // or //
+// let isHundred = (num1,num2) => num1 === 100 || num2 === 100 || (num1 + num2) === 100 
+// console.log(isHundred(34,55));
+// console.log(isHundred(45,55));
+
+ /* 12. to get the extension of a filename   */
+
+//  function getFileExtension(str){
+//   return str.slice(str.lastIndexOf('.'));
+//  }
+// console.log(getFileExtension('index.html'));
+// console.log(getFileExtension('webpack.config.js'))
+
+
+/* 13. to replace every character in given string with the 
+character following it in the alphabet */
+
+// String.fromCharCode
+// charCodeAt
+
+// let moveCharForward = (str) => {
+//  return str.split('')
+//      .map(char => String.fromCharCode(char.charCodeAt() + 1))
+//      .join('') ;
+// }
+// console.log(moveCharForward('abcde'));
+
+         // or //
+// let moveCharForward = (str) => {
+//   let arr = []
+//   for(let i=0;i<str.length;i++){
+//    let char = String.fromCharCode(str[i].charCodeAt() + 1);
+//    arr= [...arr, char];
+//   }
+//   return arr.join('')
+// }
+// console.log(moveCharForward('abcde'));
+
+
+/* 14. to get current date
+  expected format : dd/mm/yyyy */
+  // let date = new Date(); console.log(Date())
+  // let getDate = (date) => {
+  //   let days = date.getDate();  // .getDay() gives day( 0 for sunday, 1 for monday...)
+  //   let months = date.getMonth() + 1 ;  // +1 is bcz month starts with index 0 for january in js 
+  //   let years = date.getFullYear();
+  //   return `${days}/${months}/${years}`
+  // }
+  // console.log(getDate(date));
+
+
+  /* 15. to create a new string adding "New!" in front of a given string.
+   If the given string begins with "New!" already then return the original string. */
+
+//    let newString = function(str){
+//     let str1 = "New!"
+//     if(str[0] === str1[0] && str[1] === str1[1] && str[2] === str1[2])
+//     return str;
+//     else 
+//     return str+' '+str1;
+//    }
+//  console.log(newString('New! company'));
+//  console.log(newString('company'));
+
+      // or //
+  //  let str = "hi i am a girl"  
+  // let index = (str) => str.indexOf('New!') === 0 ? str : `${str} New!` 
+  // console.log(index(str))
