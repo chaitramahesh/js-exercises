@@ -180,3 +180,229 @@ function unique(str) {
     console.log(unique("abcd"));
     console.log(unique("abcdade"));
 */
+
+
+
+/* 7. Unique object property values */
+
+// let products= [
+//     {
+//         title: "Iphone 8",
+//         company: "apple"
+//     },
+//     {
+//         title: "Galaxy",
+//         company: "samsung"
+//     },
+//     {
+//         title: "Iphone 7",
+//         company: "apple"
+//     },
+//     {
+//         title: "Iphone Xs",
+//         company: "apple"
+//     },
+//     {
+//         title: "HTC Phone",
+//         company: "htc"
+//     },
+// ]
+
+// // using map
+//  function unique(arr){
+//      return [...new Set(arr.map(item => item.company))] ;
+//  }
+
+// console.log(unique(products));
+
+// //using reduce
+
+// function unique(arr){
+//     return [...arr.reduce((acc, current)=>{
+//          acc.add(current.company)
+//          return acc;
+//     }, new Set())];
+// }
+
+// console.log(unique(products));
+
+
+
+
+
+/* 8. return first word with greatest number of repeated letters */
+
+// function repeatedLetters(str){
+//     tempArr = str.split(" ").map(item=>{
+//       tempItem = item.toLowerCase().split('');
+//       return tempItem.reduce((acc, current)=>{
+//        acc[current]= acc[current]? acc[current]+1 : 1 ; // creating property acc[current] of the acc 
+//        if(acc[current]>acc.max){
+//         acc.max  =acc[current];
+//        }
+//        return acc;
+//       },{max: 1, word: item})
+//     })
+//     let number=1;
+//     let word='';
+//     for(let item of tempArr){
+//     if(item.max>number){
+//       number=item.max;
+//       word= item.word
+//     }}
+
+//     if(number>1)
+//     return word;
+//     else
+//     return "none";
+  
+// }
+
+// console.log(repeatedLetters("Javascript is the greatest programming language"))
+
+
+
+
+
+/* 9. second value/ second lowest and second greatest */
+
+// function secondValue(arr){
+//     let values= [...new Set(arr)].sort((a,b)=> a-b);
+//     if(values.length<2){
+//         return `${values[0]}`
+//     }
+//     else if (values.length === 2){
+//         return `${values[0]} ${values[1]}`
+//     }
+//     else if (values.length === 3){
+//         return `${values[1]}`
+//     }
+//     else{
+//         return `${values[1]} ${values[values.length-2]}`
+//     }
+// }
+// console.log(secondValue([1]));
+// console.log(secondValue([4,2]));
+// console.log(secondValue([44,11,22]));
+// console.log(secondValue([3,2,88,3,-11,67,7]));
+
+
+
+
+/* 10. repeated numbers  */
+// //return number with most repeat
+// //if two No.s are repeated same number of time then return first
+// // if no repeated no.s return -1
+
+// function mostRepeat(arr){
+//     let max=1;
+//     let value=-1;
+//     let position= 0;
+//     arr.reduce((acc, curr, index)=>{
+//         acc[curr]= acc[curr]? {...acc[curr], amount: acc[curr]["amount"]+1} : {amount:1,index}
+
+//      amount= acc[curr].amount;
+//      place = acc[curr].index;
+//     if(amount>max || (amount === max && place<=position && amount>1)){
+//         max=amount;
+//         value=curr;
+//         position= place;
+//     }
+
+//     return acc
+// },{}) 
+// return value
+// }
+
+// console.log(mostRepeat([5,2,2,1,5]))
+// console.log(mostRepeat([6,5,5,10,10,10]))
+// console.log(mostRepeat([3,4,1,6,10]))
+
+
+
+
+/* 11. prime number */ 
+
+// function isPrime(num){
+//     if(num<2){
+//         return false;
+//     }
+//     for(let i=2;i<num;i++){
+//     if(num % i ===0){
+//     return false;
+//     }
+//     }
+//     return true;
+// }
+
+ //     // another way
+// function isPrime(num){
+//         if(num<2){
+//             return false;
+//         }
+//         let root = Math.ceil(Math.sqrt(num))
+//         for(let i=2;i<=root;i++){
+//         if(num % i ===0){
+//         return false;
+//         }
+//         }
+//         return true;
+//     }
+    
+
+// console.log(isPrime(8))
+// console.log(isPrime(11))
+// console.log(isPrime(121))
+// console.log(isPrime(127))
+
+
+
+
+/* 12. count repeating letters */
+
+// function countLetters(str){
+//     let tempArr=str.split("")
+//     let count=1
+//     letters=[]
+//     for(let i=0;i<tempArr.length;i++){
+//         if(tempArr[i]===tempArr[i+1]){
+//         count++;
+//         }
+//         else{
+//             let value=`${count}${tempArr[i]}`;
+//             letters=[...letters,value]
+//             count=1
+//         }
+//     }
+
+//     return letters
+// }
+// console.log(countLetters("ttttuuuueeeeeggggeee"))
+
+
+
+
+
+/* 13. regex palindrome */
+
+// function checkPalindrome(str){
+//     let first=str.split(" ").join("").toLowerCase();
+//     let second = first.split("").reverse().join("")
+//     return first===second;
+// }
+// console.log(checkPalindrome("Was it a car or a cat I saw"))
+// console.log(checkPalindrome("Red -rum-, sir,-is-murder"))
+// // even though above one is a palindrome it gives false bcz split will not consider any special characters or cases
+// console.log(checkPalindrome("I got up early this morning"))
+
+//       // correct method
+
+// function checkPalindrome(str){
+//     let first= str.match(/[a-z0-9]+/ig).join("").toLowerCase()
+//     let second = first.split("").reverse().join("")
+//     // return first===second;
+//     return first===second? "It is a palindrome":"It is not a palindrome";
+// }
+// console.log(checkPalindrome("Was it a car or a cat I saw"))
+// console.log(checkPalindrome("Red -rum-, sir,-is-murder"))
+// console.log(checkPalindrome("I got up early this morning"))
