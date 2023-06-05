@@ -187,7 +187,7 @@ console.log(numbs.reduce((sum,num) => sum+num,0))
 // console.log(isHundred(45,33))
 
             // or //
-// let isHundred = (num1,num2) => num1 === 100 || num2 === 100 || (num1 + num2) === 100 
+// const isHundred = (num1,num2) => num1 === 100 || num2 === 100 || (num1 + num2) === 100 
 // console.log(isHundred(34,55));
 // console.log(isHundred(45,55));
 
@@ -206,7 +206,7 @@ character following it in the alphabet */
 // String.fromCharCode
 // charCodeAt
 
-// let moveCharForward = (str) => {
+// const moveCharForward = (str) => {
 //  return str.split('')
 //      .map(char => String.fromCharCode(char.charCodeAt() + 1))
 //      .join('') ;
@@ -214,7 +214,7 @@ character following it in the alphabet */
 // console.log(moveCharForward('abcde'));
 
          // or //
-// let moveCharForward = (str) => {
+//  const moveCharForward = (str) => {
 //   let arr = []
 //   for(let i=0;i<str.length;i++){
 //    let char = String.fromCharCode(str[i].charCodeAt() + 1);
@@ -228,7 +228,7 @@ character following it in the alphabet */
 /* 14. to get current date
   expected format : dd/mm/yyyy */
   // let date = new Date(); console.log(Date())
-  // let getDate = (date) => {
+  // const getDate = (date) => {
   //   let days = date.getDate();  // .getDay() gives day( 0 for sunday, 1 for monday...)
   //   let months = date.getMonth() + 1 ;  // +1 is bcz month starts with index 0 for january in js 
   //   let years = date.getFullYear();
@@ -252,5 +252,62 @@ character following it in the alphabet */
 
       // or //
   //  let str = "hi i am a girl"  
-  // let index = (str) => str.indexOf('New!') === 0 ? str : `${str} New!` 
+  // const index = (str) => str.indexOf('New!') === 0 ? str : `${str} New!` 
   // console.log(index(str))
+
+
+
+  /* 16. to create a new string from a given string taking the first 3 characters 
+  and the last 3 characters of a string and adding them together. The string length
+   must be 3 or more, if not, the original string is returned. */
+   
+  //  const newString = (str) => str.length<3 ? str : str.slice(0, 3) + str.slice(-3);
+  //  console.log(newString('ab'));
+  //  console.log(newString('hsktjds'));
+  //  console.log(newString('abcdsejlld'));
+
+
+
+
+/* 17. to extract the first half of a string of even length */
+// function firstHalfOfString(str) {
+//   return str.slice(0, str.length/2);
+// }
+// console.log(firstHalfOfString('abcde'));
+// console.log(firstHalfOfString('abcdefgh'));
+// console.log(firstHalfOfString('abcdef'));
+
+
+
+/*18. to concatenate two strings expect their 
+first character */
+// const concatStrings = (str1,str2)=> str1.slice(1) + str2.slice(1);
+// console.log(concatStrings('hhe', 'lllo'));
+// console.log(concatStrings('II', 'aam'));
+
+
+
+/* 19. to find out which one is nearest to 100 out of two given values*/
+// const nearestValues = (value1,value2)=>
+// Math.abs(100 - value1) < Math.abs(100 - value2)? value1:value2 ;
+// console.log(nearestValues(98,108));
+// console.log(nearestValues(78,87));
+// console.log(nearestValues(99,99));
+// console.log(nearestValues(26,128));
+
+
+
+/* 20. to check a given string contains 2 to 4 occurrences 
+of a specified character */
+// function contains2To4(str,char){
+//   let strArr = str.split('').filter(character => character === char);
+//   if(strArr.length>=2 && strArr.length<=4)
+//   return true;
+//   else
+//   return false;
+// }
+// console.log(contains2To4('ooh!','o'));
+// console.log(contains2To4('oh!','o'));
+// console.log(contains2To4('oooh!','o'));
+// console.log(contains2To4('ooooh!','o'));
+// console.log(contains2To4('oooooh!','o'));
