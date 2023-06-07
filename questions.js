@@ -311,3 +311,93 @@ of a specified character */
 // console.log(contains2To4('oooh!','o'));
 // console.log(contains2To4('ooooh!','o'));
 // console.log(contains2To4('oooooh!','o'));
+
+
+
+/* 21. to find the number of even digits in an array of integers */
+// const noOfEvenDigits = (arr)=>{
+//   let number = 0;
+//   arr.forEach(element => {
+//     if(element%2===0)
+//     number+=1;
+//     })
+//     return number;
+//    }
+
+//        // or //
+// const noOfEvenDigits = (arr) => {
+//   return arr.filter(item=> item % 2 === 0 ).length; 
+// }
+
+//   console.log(noOfEvenDigits([1,2,3,4,5,6]));
+//   console.log(noOfEvenDigits([7,9,11]));
+//   console.log(noOfEvenDigits([98,87,84,55]))
+
+
+
+
+// /* 22. to find the number of even values up to a given number */
+// const countEvenNumbers = (array) => array.filter(num => num % 2 === 0).length;
+
+// const createArrayOfNumbers = (number)=>{
+//   const array = [];
+//   for(let i=1 ; i <= number; i++){
+//     array.push(i);
+    
+//   }
+//   return array;
+// }
+// console.log(countEvenNumbers(createArrayOfNumbers(8)));
+// console.log(countEvenNumbers(createArrayOfNumbers(5)));
+// console.log(countEvenNumbers(createArrayOfNumbers(17)));
+// console.log(countEvenNumbers(createArrayOfNumbers(23)));
+
+
+
+/* 23. to check whether given array of integers is sorted in ascending order */
+// function checkAscendingOrder(arr){
+
+//   const array = arr.slice();
+//  const sortedArray = arr.sort((a,b)=> a - b);
+
+//  for(let i=0;i<arr.length;i++){
+//  if(array[i] !== sortedArray[i])
+//     return 'not sorted'
+//   }
+//   return 'sorted';
+
+//       //   or   //
+// // for(let i=0;i<arr.length;i++){
+// //   if(arr[i] > arr[i+1])
+// //    return 'not sorted';
+// // }
+// // return 'sorted'
+// }
+// console.log(checkAscendingOrder([7,2,6,1]));
+// console.log(checkAscendingOrder([1,2,3,4]));
+
+
+
+/* 24. to get the largest even number from an array of integers. */
+// function largeEvenNumber(arr){
+
+//   // let array = arr.filter(number=> number%2===0);
+//   //   array.sort((a,b) => a-b);
+//   //   return array[array.length - 1];
+
+//          //   or  //
+//   let array = arr.filter(number=> number%2===0);
+//   return Math.max(...array)
+// }
+// console.log(largeEvenNumber([2,3,6,8,4]));
+// console.log(largeEvenNumber([5,7,9]));
+// console.log(largeEvenNumber([3,8,12,5]));
+
+
+
+/* 25. to replace the first digit in a string (should contains at least digit) with $ character. */
+// const replaceFirstDigit=(str)=> str.replace(/[0-9]/, '$');
+ 
+// console.log(replaceFirstDigit('Abcd1Abced'));
+// console.log(replaceFirstDigit('A213de6fg'));
+// console.log(replaceFirstDigit('Ab1cdg4hd1A'));
